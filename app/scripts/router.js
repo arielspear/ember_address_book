@@ -7,7 +7,7 @@ module.exports = function(AddressBook) {
 	AddressBook.Router.map(function() {
 		this.route('about');
 		this.route('edit', {path: '/edit/:id'});
-		this.resource('favorite', function() {
+		this.resource('contact', function() {
 			this.route('new');
 		});
 	});
