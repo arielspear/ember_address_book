@@ -2,4 +2,5 @@
 
 'use strict';
 
-window.EmberAddressBook = Ember.Application.create();
+var AddressBook = Ember.Application.create();
+require('./router.js')(AddressBook);
