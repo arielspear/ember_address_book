@@ -7,6 +7,23 @@
     "jquery": "~2.1.0",
     "bootstrap-sass": "~3.0.2"
   },
-  "devDependencies": {
-  }
+  "homepage": "https://github.com/arielspear/ember_address_book",
+  "authors": [
+    "Grant",
+    "Ariel",
+    "Tian"
+  ],
+  "description": "An Address Book",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
 }
