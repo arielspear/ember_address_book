@@ -1,6 +1,9 @@
 {
   "include": [
     "app/bower_components/jquery/dist/jquery.js",
+    "app/bower_components/handlebars/handlebars.runtime.js",
+    "app/bower_components/ember/ember<%= ember_suffix %>.js",
+    "app/bower_components/ember-data/ember-data<%= ember_suffix %>.js",
     "app/bower_components/bootstrap-sass/js/affix.js",
     "app/bower_components/bootstrap-sass/js/alert.js",
     "app/bower_components/bootstrap-sass/js/dropdown.js",

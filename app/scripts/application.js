@@ -1,5 +1,5 @@
+/* global Ember: false */
+
 'use strict';
 
-$(function() {
-  // your code here
-});
+window.EmberAddressBook = Ember.Application.create();
