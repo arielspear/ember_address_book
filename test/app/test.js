@@ -25,6 +25,7 @@ describe('app', function() {
         expect(currentURL()).to.eql('/contact/1');
       });
     });
+    
   });
 
   it.skip('fails to edit nonexistent people', function() {
