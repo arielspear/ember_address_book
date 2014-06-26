@@ -18,9 +18,8 @@ AddressBook.ApplicationRoute = Ember.Route.extend({
 	},
 	actions: {
 		createPerson: function () {
-			console.log('button action!');
-			var first = this.get('firstName');
-			var last = this.get('lastName');
+			var first = this.controllerFor('application').get('inputFirstName');
+			var last = this.controllerFor('application').get('inputLastName');
 			console.log(first, last);
 		}
 	}

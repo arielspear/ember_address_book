@@ -8,9 +8,9 @@
       {{/each}}
     {{outlet}}
     <form>
-      {{input type="text" value=firstName placeholder="First Name"}}
-      {{input type="text" value=lastName placeholder="Last Name"}}
+      {{input type="text" value=inputFirstName placeholder="First Name"}}
+      {{input type="text" value=inputLastName placeholder="Last Name"}}
       <button {{action 'createPerson'}}>Add Person</button>
 
     </form>
-      You are adding <strong>{{firstName}} {{lastName}}</strong> to the best address book of all time!
+      You are adding <strong>{{inputFirstName}} {{inputLastName}}</strong> to the best address book of all time!
