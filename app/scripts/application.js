@@ -1,5 +1,3 @@
-/* global Ember: false, DS: false */
-
 'use strict';
 
 var AddressBook = Ember.Application.create();

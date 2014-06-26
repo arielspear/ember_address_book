@@ -1,5 +1,3 @@
-/* global describe, it, visit, andThen, expect, click, find */
-
 'use strict';
 
 describe('app', function() {
