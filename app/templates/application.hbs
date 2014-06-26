@@ -3,9 +3,13 @@
       {{#link-to 'contact'}}Contacts{{/link-to}}
       {{#link-to 'about'}}About{{/link-to}}
       </nav>
+      {{#each}}
       <h3>{{firstName}} {{lastName}}</h3>
+      {{/each}}
     {{outlet}}
     <form>
-      {{input type="text" value=name placeholder="Your First & Last Name"}}
+      {{input type="text" value=name placeholder="Your First Name"}}
+      {{input type="text" value=name placeholder="Your Last Name"}}
+      <button>Add Person</button>
     </form>
       Hello {{name}} welcome to the best address book of all time!

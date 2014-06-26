@@ -14,7 +14,7 @@ module.exports = function(AddressBook) {
 
 AddressBook.ApplicationRoute = Ember.Route.extend({
 	model: function () {
-		return this.store.find('person', 1);
+		return this.store.find('person');
 	}
 });
 
