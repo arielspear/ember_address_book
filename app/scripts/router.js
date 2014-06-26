@@ -21,6 +21,11 @@ AddressBook.ApplicationRoute = Ember.Route.extend({
 			var first = this.controllerFor('application').get('inputFirstName');
 			var last = this.controllerFor('application').get('inputLastName');
 			console.log(first, last);
+			var person = this.store.createRecord('person', {
+				firstName: first,
+				lastName: last
+			});
+			person.save();
 		}
 	}
 });
