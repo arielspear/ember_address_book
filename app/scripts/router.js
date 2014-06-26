@@ -32,7 +32,11 @@ AddressBook.ApplicationRoute = Ember.Route.extend({
 		}
 	}
 });
-
+AddressBook.ContactRoute = Ember.Route.extend({
+	model: function (params) {
+		return params.id;
+	}
+});
 	var displayArray = [
 		{ id: 1, title: 'hello' },
 		{ id: 2, title: 'this' },
