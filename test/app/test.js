@@ -15,4 +15,16 @@ describe('app', function() {
 	  	expect(currentRouteName()).to.eql('edit');
   	});
   });
+
+  it('creates a new person in model', function() {
+  	fillIn(first, 'Hello');
+  	fillIn(last, 'World!');
+  	andThen(function() {
+  		click(addButton);
+  		andThen(function() {
+  			expect(find('ul.contact li:last').text()).to.eql('Hello World!');
+  		});
+  	});
+
+  });
 });

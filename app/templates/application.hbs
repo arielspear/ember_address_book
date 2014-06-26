@@ -3,14 +3,16 @@
       {{#link-to 'contact'}}Contacts{{/link-to}}
       {{#link-to 'about'}}About{{/link-to}}
       </nav>
-      {{#each}}
-      <h3>{{firstName}} {{lastName}}</h3>
-      {{/each}}
+      <ul class='contact'>
+        {{#each}}
+        <li><h3>{{firstName}} {{lastName}}</h3></li>
+        {{/each}}
+      </ul>
     {{outlet}}
     <form>
-      {{input type="text" value=inputFirstName placeholder="First Name"}}
-      {{input type="text" value=inputLastName placeholder="Last Name"}}
-      <button {{action 'createPerson'}}>Add Person</button>
+      {{input type="text" id='first' value=inputFirstName placeholder="First Name"}}
+      {{input type="text" id='last' value=inputLastName placeholder="Last Name"}}
+      <button id='addButton' {{action 'createPerson'}}>Add Person</button>
 
     </form>
       You are adding <strong>{{inputFirstName}} {{inputLastName}}</strong> to the best address book of all time!
