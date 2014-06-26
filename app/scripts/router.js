@@ -54,6 +54,7 @@ AddressBook.ApplicationRoute = Ember.Route.extend({
 					obj = element;
 				}
 			});
+			// if (!obj) { throw new Error('Missing'); }
 			return obj;
 		}
 	});
