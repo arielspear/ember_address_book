@@ -19,21 +19,3 @@ AddressBook.Person.FIXTURES = [
 	{ id:2, firstName: 'Grant', lastName: 'Stampfli' },
 	{ id:3, firstName: 'Tian', lastName: 'Song' }
 ];
-
-AddressBook.ApplicationRoute = Ember.Route.extend({
-	model: function () {
-		return this.store.find('person', 1);
-	}
-});
-
-
-
-
-
-// store.CreateRecord('post', {
-// 	firstName: 'Tian',
-// 	lastName: 'Song'
-// });
-
-// post.save();
-// store.find('person', 1);

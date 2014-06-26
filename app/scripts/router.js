@@ -12,6 +12,12 @@ module.exports = function(AddressBook) {
 		});
 	});
 
+AddressBook.ApplicationRoute = Ember.Route.extend({
+	model: function () {
+		return this.store.find('person', 1);
+	}
+});
+
 	var displayArray = [
 		{ id: 1, title: 'hello' },
 		{ id: 2, title: 'this' },
