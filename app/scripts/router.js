@@ -25,6 +25,9 @@ AddressBook.ApplicationRoute = Ember.Route.extend({
 				firstName: first,
 				lastName: last
 			});
+
+			this.controllerFor('application').set('inputFirstName', '');
+			this.controllerFor('application').set('inputLastName', '');
 			person.save();
 		}
 	}
