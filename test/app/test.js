@@ -11,18 +11,18 @@ describe('app', function() {
   		expect(currentPath()).to.eql('index');
     });
     it('creates a new person in model', function() {
-    	fillIn(first, 'Hello');
-    	fillIn(last, 'World!');
-  		click(addButton);
+    	fillIn('#first', 'Hello');
+    	fillIn('#last', 'World!');
+  		click('#addButton');
   		andThen(function() {
   			expect(find('ul.contact li:last').text()).to.eql('Hello World!');
   		});
     });
-    it('links to the edit template', function() {
+    it('links to the contact template', function() {
       click('ul.contact li:first-of-type a');
       andThen(function() {
-        expect(currentRouteName()).to.eql('edit');
-        expect(currentURL()).to.eql('/edit/1');
+        expect(currentRouteName()).to.eql('contact');
+        expect(currentURL()).to.eql('/contact/1');
       });
     });
   });
