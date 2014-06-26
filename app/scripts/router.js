@@ -7,9 +7,7 @@ module.exports = function(AddressBook) {
 	AddressBook.Router.map(function() {
 		this.route('about');
 		this.route('edit', {path: '/edit/:id'});
-		this.resource('contact', function() {
-			this.route('new');
-		});
+		this.route('contact', {path: '/contact/:id'});
 	});
 
 AddressBook.ApplicationRoute = Ember.Route.extend({
@@ -33,8 +31,8 @@ AddressBook.ApplicationRoute = Ember.Route.extend({
 	}
 });
 AddressBook.ContactRoute = Ember.Route.extend({
-	model: function (params) {
-		return params.id;
+	model: function (param) {
+		return this.store.find('person', param.id);
 	}
 });
 	var displayArray = [
