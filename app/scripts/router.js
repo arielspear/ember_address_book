@@ -16,7 +16,6 @@ AddressBook.ApplicationRoute = Ember.Route.extend({
 		createPerson: function () {
 			var first = this.controllerFor('application').get('inputFirstName');
 			var last = this.controllerFor('application').get('inputLastName');
-			console.log(first, last);
 			var person = this.store.createRecord('person', {
 				firstName: first,
 				lastName: last
@@ -38,7 +37,6 @@ AddressBook.ContactRoute = Ember.Route.extend({
 		},
 		deletePerson: function (id) {
 			var self = this;
-			console.log(id);
 			this.store.find('person', id).then(function(person) {
 				return person.destroyRecord();
 			}).then(function() {

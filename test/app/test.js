@@ -42,11 +42,9 @@ describe('app', function() {
       andThen(function() {
         expect(currentRouteName()).to.eql('contact');
         expect(currentURL()).to.eql('/contact/1');
-        console.log(find('ul.contact li').length);
         click('#deleteButton');
         andThen(function() {
           expect(currentRouteName()).to.eql('index');
-          console.log(find('ul.contact li').length);
           expect(find('ul.contact li').length).to.eql(2);
         });
       });
