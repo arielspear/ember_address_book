@@ -2,7 +2,9 @@
 
 module.exports = function(AddressBook) {
 	AddressBook.IndexController = Ember.ArrayController.extend({
-		itemController: 'contact'
+		itemController: 'contact',
+		sortProperties: ['lastName', 'firstName'],
+  	sortAscending: true
 	});
 
 	AddressBook.ContactController = Ember.ObjectController.extend({

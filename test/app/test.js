@@ -56,6 +56,9 @@ describe('app', function() {
         expect(find('ul.contact li:last').text()).to.eql('Undefined ');
       });
     });
+    it.only('sorts names alphabetically by last name.', function(){
+        expect(find('ul.contact li:first').text()).to.eql('Tian Song');
+    });
   });
 
   it.skip('fails to edit nonexistent people', function() {
