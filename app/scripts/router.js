@@ -31,6 +31,11 @@ AddressBook.ApplicationRoute = Ember.Route.extend({
 AddressBook.ContactRoute = Ember.Route.extend({
 	model: function (param) {
 		return this.store.find('person', param.id);
+	},
+	actions: {
+		backHome: function () {
+			this.transitionTo('index');
+		}
 	}
 });
 	var displayArray = [

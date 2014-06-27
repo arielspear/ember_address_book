@@ -23,9 +23,12 @@ describe('app', function() {
       andThen(function() {
         expect(currentRouteName()).to.eql('contact');
         expect(currentURL()).to.eql('/contact/1');
+        click('#editButton');
+        andThen(function() {
+          expect(currentRouteName()).to.eql('index');
+        });
       });
     });
-    
   });
 
   it.skip('fails to edit nonexistent people', function() {
