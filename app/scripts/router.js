@@ -8,21 +8,24 @@ module.exports = function(AddressBook) {
 		this.route('contact', {path: '/contact/:id'});
 	});
 
-AddressBook.ApplicationRoute = Ember.Route.extend({
+AddressBook.IndexRoute = Ember.Route.extend({
 	model: function () {
 		return this.store.find('person');
 	},
 	actions: {
 		createPerson: function () {
-			var first = this.controllerFor('application').get('inputFirstName');
-			var last = this.controllerFor('application').get('inputLastName');
+			var first = this.controllerFor('index').get('inputFirstName');
+			var last = this.controllerFor('index').get('inputLastName');
+			if (!first) {
+				first = 'Undefined';
+			}
 			var person = this.store.createRecord('person', {
 				firstName: first,
 				lastName: last
 			});
 
-			this.controllerFor('application').set('inputFirstName', '');
-			this.controllerFor('application').set('inputLastName', '');
+			this.controllerFor('index').set('inputFirstName', '');
+			this.controllerFor('index').set('inputLastName', '');
 			person.save();
 		}
 	}

@@ -50,6 +50,12 @@ describe('app', function() {
         });
       });
     });
+    it('creates a new person in model', function() {
+      click('#addButton');
+      andThen(function() {
+        expect(find('ul.contact li:last').text()).to.eql('Undefined ');
+      });
+    });
   });
 
   it.skip('fails to edit nonexistent people', function() {

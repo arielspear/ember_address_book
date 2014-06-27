@@ -1,19 +1,9 @@
-     <nav>
-      {{#link-to 'index'}}Home{{/link-to}}
-{{!--       {{#link-to 'contact'}}Contacts{{/link-to}} --}}
-      {{#link-to 'about'}}About{{/link-to}}
-      </nav>
-      <ul class='contact' id='content'>
-        {{#each}}
-        <li><h3>{{#link-to 'contact' id}}{{firstName}} {{lastName}}{{/link-to}}</h3></li>
-        {{/each}}
-      </ul>
-    {{outlet}}
-    <form>
-      {{input type="text" id='first' value=inputFirstName placeholder="First Name"}}
-      {{input type="text" id='last' value=inputLastName placeholder="Last Name"}}
-      <button id='addButton' {{action 'createPerson'}}>Add Person</button>
+<h1>Ember Address Book</h1>
 
-    </form>
-      You are adding <strong>{{inputFirstName}} 
-      {{inputLastName}}</strong> to the best address book of all time!
+<nav>
+{{#link-to 'index'}}Home{{/link-to}}
+{{!--       {{#link-to 'contact'}}Contacts{{/link-to}} --}}
+{{#link-to 'about'}}About{{/link-to}}
+</nav>
+
+{{outlet}}
