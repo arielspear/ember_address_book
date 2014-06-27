@@ -42,14 +42,6 @@ AddressBook.ContactRoute = Ember.Route.extend({
 			}).then(function() {
 				self.transitionTo('index');
 			});
-			// console.log(person);
-			// person.destroyRecord();
-
-			// var person = this.currentModel;
-			// console.log(person);
-			// person.deleteRecord();
-			// person.save();
-
 		}
 	}
 });
@@ -74,7 +66,6 @@ AddressBook.ContactRoute = Ember.Route.extend({
 					obj = element;
 				}
 			});
-			// if (!obj) { throw new Error('Missing'); }
 			return obj;
 		}
 	});
