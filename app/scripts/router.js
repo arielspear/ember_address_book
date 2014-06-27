@@ -8,46 +8,44 @@ module.exports = function(AddressBook) {
 		this.route('contact', {path: '/contact/:id'});
 	});
 
-AddressBook.IndexRoute = Ember.Route.extend({
-	model: function () {
-		return this.store.find('person');
-	},
-	actions: {
-		createPerson: function () {
-			var first = this.controllerFor('index').get('inputFirstName');
-			var last = this.controllerFor('index').get('inputLastName');
-			if (!first) {
-				first = 'Undefined';
-			}
-			var person = this.store.createRecord('person', {
-				firstName: first,
-				lastName: last
-			});
-
-			this.controllerFor('index').set('inputFirstName', '');
-			this.controllerFor('index').set('inputLastName', '');
-			person.save();
-		}
-	}
-});
-AddressBook.ContactRoute = Ember.Route.extend({
-	model: function (param) {
-		return this.store.find('person', param.id);
-	},
-	actions: {
-		backHome: function () {
-			this.transitionTo('index');
+	AddressBook.IndexRoute = Ember.Route.extend({
+		model: function () {
+			return this.store.find('person');
 		},
-		deletePerson: function (id) {
-			var self = this;
-			this.store.find('person', id).then(function(person) {
-				return person.destroyRecord();
-			}).then(function() {
-				self.transitionTo('index');
-			});
+		actions: {
+			createPerson: function () {
+				var first = this.controllerFor('index').get('inputFirstName');
+				var last = this.controllerFor('index').get('inputLastName');
+				var person = this.store.createRecord('person', {
+					firstName: first,
+					lastName: last
+				});
+
+				this.controllerFor('index').set('inputFirstName', '');
+				this.controllerFor('index').set('inputLastName', '');
+				person.save();
+			}
 		}
-	}
-});
+	});
+	AddressBook.ContactRoute = Ember.Route.extend({
+		model: function (param) {
+			return this.store.find('person', param.id);
+		},
+		actions: {
+			backHome: function () {
+				this.transitionTo('index');
+			},
+			deletePerson: function (id) {
+				var self = this;
+				this.store.find('person', id).then(function(person) {
+					return person.destroyRecord();
+				}).then(function() {
+					self.transitionTo('index');
+				});
+			}
+		}
+	});
+
 	var displayArray = [
 		{ id: 1, title: 'hello' },
 		{ id: 2, title: 'this' },
