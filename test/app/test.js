@@ -29,6 +29,17 @@ describe('app', function() {
         });
       });
     });
+    it('deletes a contact when the delete button is clicked', function() {
+      click('ul.contact li:first-of-type a');
+      andThen(function() {
+        expect(currentRouteName()).to.eql('contact');
+        expect(currentURL()).to.eql('/contact/1');
+        click('#deleteButton');
+        andThen(function() {
+          // expect(c)
+        });
+      });
+    });
   });
 
   it.skip('fails to edit nonexistent people', function() {

@@ -35,6 +35,10 @@ AddressBook.ContactRoute = Ember.Route.extend({
 	actions: {
 		backHome: function () {
 			this.transitionTo('index');
+		},
+		deletePerson: function (param) {
+			var person = this.store.find('person', param.id);
+				person.destroyRecord();
 		}
 	}
 });
