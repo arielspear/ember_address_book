@@ -18,7 +18,7 @@
   "trailing": true,
   "smarttabs": true,
   "globals": {
-    "EmberAddressBook": true,
+    "AddressBook": true,
     "Ember": true,
     "DS": true
   }

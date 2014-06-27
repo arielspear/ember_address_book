@@ -1,6 +1,6 @@
 'use strict';
 
-var AddressBook = Ember.Application.create();
+var AddressBook = window.AddressBook = Ember.Application.create();
 require('./router.js')(AddressBook);
 
 AddressBook.ApplicationAdapter = DS.FixtureAdapter;

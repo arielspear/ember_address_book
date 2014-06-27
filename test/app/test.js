@@ -1,6 +1,14 @@
 'use strict';
 
 describe('app', function() {
+  beforeEach(function() {
+    AddressBook.reset();
+    AddressBook.Person.FIXTURES = [
+      { id:1, firstName: 'Ariel', lastName: 'Spear' },
+      { id:2, firstName: 'Grant', lastName: 'Stampfli' },
+      { id:3, firstName: 'Tian', lastName: 'Song' }
+    ];
+  });
   describe('home page', function() {
     beforeEach(function() {
       visit('/');
@@ -34,9 +42,12 @@ describe('app', function() {
       andThen(function() {
         expect(currentRouteName()).to.eql('contact');
         expect(currentURL()).to.eql('/contact/1');
+        console.log(find('ul.contact li').length);
         click('#deleteButton');
         andThen(function() {
-          // expect(c)
+          expect(currentRouteName()).to.eql('index');
+          console.log(find('ul.contact li').length);
+          expect(find('ul.contact li').length).to.eql(2);
         });
       });
     });
