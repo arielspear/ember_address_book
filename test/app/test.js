@@ -3,6 +3,7 @@
 describe('app', function() {
   beforeEach(function() {
     AddressBook.reset();
+    AddressBook.ApplicationAdapter = DS.FixtureAdapter.extend();
     AddressBook.Person.FIXTURES = [
       { id:1, firstName: 'Ariel', lastName: 'Spear' },
       { id:2, firstName: 'Grant', lastName: 'Stampfli' },

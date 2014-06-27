@@ -2,15 +2,17 @@
 
 var AddressBook = window.AddressBook = Ember.Application.create();
 require('./router.js')(AddressBook);
-
-AddressBook.ApplicationAdapter = DS.FixtureAdapter;
-
 var attr = DS.attr;
 
 AddressBook.Person = DS.Model.extend({
 	firstName: attr('string'),
 	lastName: attr('string')
 });
+
+AddressBook.ApplicationAdapter = DS.LSAdapter.extend({
+	namespace: 'AddressBook-emberjs'
+});
+
 
 AddressBook.Person.FIXTURES = [
 	{ id:1, firstName: 'Ariel', lastName: 'Spear' },
