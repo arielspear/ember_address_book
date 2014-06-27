@@ -4,11 +4,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
   font-size: 14pt;
+  text-align: center;
+  max-width: 100%;
 }
 
-.content {
+#content {
   width: 600px;
   margin: 4em auto;
+  text-align: left;
 
   img {
     width: 100%;
@@ -25,3 +28,4 @@ body {
   }
 
 }
+

@@ -3,7 +3,7 @@
       {{#link-to 'contact'}}Contacts{{/link-to}}
       {{#link-to 'about'}}About{{/link-to}}
       </nav>
-      <ul class='contact'>
+      <ul class='contact' id='content'>
         {{#each}}
         <li><h3>{{#link-to 'contact' id}}{{firstName}} {{lastName}}{{/link-to}}</h3></li>
         {{/each}}
