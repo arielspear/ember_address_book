@@ -10,6 +10,10 @@ module.exports = function(AddressBook) {
 	AddressBook.ContactController = Ember.ObjectController.extend({
 		firstName: function() {
 			return this.get('model.firstName') || 'Undefined';
-		}.property('model.firstName')
+		}.property('model.firstName'),
+
+			lastName: function() {
+			return this.get('model.lastName') || 'Undefined';
+		}.property('model.lastName')
 	});
 };
