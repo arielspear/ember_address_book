@@ -53,7 +53,7 @@ describe('app', function() {
     it('creates a new person in model', function() {
       click('#addButton');
       andThen(function() {
-        expect(find('ul.contact li:last').text()).to.eql('Undefined ');
+        expect(find('ul.contact li:last').text()).to.eql('Undefined Undefined');
       });
     });
     it('sorts names alphabetically by last name.', function(){
