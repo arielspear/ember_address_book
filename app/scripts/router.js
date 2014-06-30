@@ -33,6 +33,12 @@ module.exports = function(AddressBook) {
 		},
 		actions: {
 			backHome: function () {
+				// var editedFirst = this.controllerFor('contact').get('firstNamePLS');
+				// var modelFirst = this.controllerFor('contact').get('model.firstName');
+				// console.log(editedFirst);
+				// console.log(modelFirst);
+				// this.set(modelFirst, editedFirst);
+				this.currentModel.save();
 				this.transitionTo('index');
 			},
 			deletePerson: function (id) {
